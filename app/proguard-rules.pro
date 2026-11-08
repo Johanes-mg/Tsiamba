@@ -1,0 +1,2 @@
+-keep class com.tsiambajojoh.mg.** { *; }
+-dontwarn org.jetbrains.annotations.**
