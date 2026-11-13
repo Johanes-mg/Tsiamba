@@ -22,6 +22,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
@@ -54,6 +55,7 @@ fun EcranParametres(
     val t = { cle: String -> Textes.t(cle, langue) }
     val contexte = LocalContext.current
     var message by remember { mutableStateOf<String?>(null) }
+    val autoriserCaptures = preferences.autoriserCaptures.value
 
     val launcherExport = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.CreateDocument("application/json")
@@ -155,6 +157,24 @@ fun EcranParametres(
                                 modifier = Modifier.padding(end = 8.dp)
                             )
                         }
+                    }
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(text = t("captures_ecran"), style = MaterialTheme.typography.bodyLarge)
+                            Text(
+                                text = t("captures_ecran_desc"),
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                        Switch(
+                            checked = autoriserCaptures,
+                            onCheckedChange = { preferences.changerCaptures(it) }
+                        )
                     }
                 }
             }

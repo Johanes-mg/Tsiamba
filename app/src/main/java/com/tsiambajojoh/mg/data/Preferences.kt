@@ -35,6 +35,7 @@ class Preferences(context: Context) {
             else -> ThemeApp.SYSTEME
         }
     )
+    val autoriserCaptures = mutableStateOf(prefs.getBoolean(CLE_CAPTURES, true))
 
     fun changerLangue(nouvelle: Langue) {
         langue.value = nouvelle
@@ -56,10 +57,16 @@ class Preferences(context: Context) {
         prefs.edit().putString(CLE_THEME, nouveau.code).apply()
     }
 
+    fun changerCaptures(autorise: Boolean) {
+        autoriserCaptures.value = autorise
+        prefs.edit().putBoolean(CLE_CAPTURES, autorise).apply()
+    }
+
     companion object {
         private const val PREFS = "tsiamba_prefs_ui"
         private const val CLE_LANGUE = "langue"
         private const val CLE_VERROU = "methode_verrou"
         private const val CLE_THEME = "theme"
+        private const val CLE_CAPTURES = "autoriser_captures"
     }
 }

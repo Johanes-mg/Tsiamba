@@ -21,9 +21,9 @@ android {
         applicationId = "com.tsiambajojoh.mg"
         minSdk = 23
         targetSdk = 34
-        versionCode = 311
-        versionName = "3.1.1"
-        resourceConfigurations += listOf("fr", "en")
+        versionCode = 312
+        versionName = "3.1.2"
+        resourceConfigurations += listOf("fr", "en", "mg")
     }
 
     signingConfigs {
@@ -49,6 +49,11 @@ android {
                 signingConfig = signingConfigs.getByName("release")
             }
         }
+    }
+
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
     }
 
     compileOptions {

@@ -39,11 +39,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             TsiambaTheme(theme = preferences.theme.value) {
                 Surface(modifier = Modifier.fillMaxSize()) {
-                    LaunchedEffect(Unit) {
-                        window.setFlags(
-                            WindowManager.LayoutParams.FLAG_SECURE,
-                            WindowManager.LayoutParams.FLAG_SECURE
-                        )
+                    val autoriserCaptures = preferences.autoriserCaptures.value
+                    LaunchedEffect(autoriserCaptures) {
+                        if (autoriserCaptures) {
+                            window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
+                        } else {
+                            window.setFlags(
+                                WindowManager.LayoutParams.FLAG_SECURE,
+                                WindowManager.LayoutParams.FLAG_SECURE
+                            )
+                        }
                     }
                     ApplicationTsiamba(
                         activite = this,
