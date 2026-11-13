@@ -23,7 +23,7 @@ Tsiamba allows you to store, organize, and retrieve your passwords securely. It 
 
 ### Security and Authentication
 - **AES-256-GCM Encryption**: All passwords and metadata are encrypted using the Android Keystore system.
-- **Biometric Unlock**: Secure your vault with fingerprint, face unlock, or device PIN using the native `KeyguardManager`.
+- **Biometric Unlock**: Secure your vault with fingerprint, face unlock, or device PIN using the native KeyguardManager.
 - **FLAG_SECURE Toggle**: Optionally allow or block screenshots and preview in recent apps from the settings.
 
 ### Password Management
@@ -52,59 +52,41 @@ Tsiamba allows you to store, organize, and retrieve your passwords securely. It 
 
 ## Project Structure
 
-- Tsiamba/
-  - app/
-    - src/
-      - main/
-        - java/
-          - com/tsiambajojoh/mg/
-            - MainActivity.kt
-            - data/
-              - AuthentificationBiometrique.kt
-              - Chiffrement.kt
-              - Langue.kt
-              - MotDePasse.kt
-              - MotDePasseRepository.kt
-              - Preferences.kt
-              - Site.kt
-              - Textes.kt
-            - ui/
-              - screens/
-                - DialogueConfirm.kt
-                - EcranAccueil.kt
-                - EcranAjout.kt
-                - EcranDetail.kt
-                - EcranParametres.kt
-                - EcranVerrou.kt
-                - IconeDrawableFallback.kt
-              - theme/
-                - Color.kt
-                - Theme.kt
-                - Type.kt
-        - res/
-          - drawable/
-          - mipmap-*/
-          - AndroidManifest.xml
-    - build.gradle.kts
-    - proguard-rules.pro
-  - build.gradle.kts
-  - settings.gradle.kts
-  - gradle.properties
-  - README.md
-  - LICENSE.md
-
-### Source Code Organization
-
-| File | Responsibility |
-| :--- | :--- |
-| `MainActivity.kt` | Entry point, sets up the Compose UI and navigation. |
-| `MotDePasseRepository.kt` | Manages password data, CRUD operations, and persistence. |
-| `Chiffrement.kt` | Handles AES-256-GCM encryption and decryption. |
-| `AuthentificationBiometrique.kt` | Wraps `KeyguardManager` for secure unlocking. |
-| `Site.kt` | Predefined list of supported services. |
-| `Preferences.kt` | Manages user preferences (theme, language, lock method, screenshots). |
-| `EcranAccueil.kt` | Home screen displaying the password list. |
-| `EcranVerrou.kt` | Lock screen for authentication. |
+<pre>
+Tsiamba/
+├── app/
+│   ├── src/main/java/com/tsiambajojoh/mg/
+│   │   ├── MainActivity.kt
+│   │   ├── data/
+│   │   │   ├── AuthentificationBiometrique.kt
+│   │   │   ├── Chiffrement.kt
+│   │   │   ├── Langue.kt
+│   │   │   ├── MotDePasse.kt
+│   │   │   ├── MotDePasseRepository.kt
+│   │   │   ├── Preferences.kt
+│   │   │   ├── Site.kt
+│   │   │   └── Textes.kt
+│   │   └── ui/
+│   │       ├── screens/
+│   │       │   ├── DialogueConfirm.kt
+│   │       │   ├── EcranAccueil.kt
+│   │       │   ├── EcranAjout.kt
+│   │       │   ├── EcranDetail.kt
+│   │       │   ├── EcranParametres.kt
+│   │       │   ├── EcranVerrou.kt
+│   │       │   └── IconeDrawableFallback.kt
+│   │       └── theme/
+│   │           ├── Color.kt
+│   │           ├── Theme.kt
+│   │           └── Type.kt
+│   ├── build.gradle.kts
+│   └── proguard-rules.pro
+├── build.gradle.kts
+├── settings.gradle.kts
+├── gradle.properties
+├── README.md
+└── LICENSE.md
+</pre>
 
 ## Getting Started
 
@@ -134,7 +116,7 @@ Tsiamba allows you to store, organize, and retrieve your passwords securely. It 
 
 ## Data and Persistence
 
-Tsiamba uses `SharedPreferences` to store encrypted JSON data. The encryption key is generated and stored in the Android Keystore, ensuring it is hardware-backed and cannot be extracted. 
+Tsiamba uses SharedPreferences to store encrypted JSON data. The encryption key is generated and stored in the Android Keystore, ensuring it is hardware-backed and cannot be extracted. 
 
 **Recommendation**: Regularly export your vault to an encrypted JSON file and keep it in a safe place. This will help you recover your data if you switch devices or reset your phone.
 
@@ -143,7 +125,7 @@ Tsiamba uses `SharedPreferences` to store encrypted JSON data. The encryption ke
 - **R8 Full Mode**: Enabled for release builds to minimize APK size and improve runtime performance.
 - **Baseline Profiles**: Included by default via AndroidX libraries for faster startup.
 - **Resource Shrinking**: Removes unused resources in release builds.
-- **Optimized Memory Usage**: Uses `SnapshotStateList` and primitive types to reduce garbage collection.
+- **Optimized Memory Usage**: Uses SnapshotStateList and primitive types to reduce garbage collection.
 
 ## Roadmap
 
@@ -157,9 +139,9 @@ Tsiamba uses `SharedPreferences` to store encrypted JSON data. The encryption ke
 Contributions are welcome! If you find a bug or have a feature request, please open an issue.
 
 1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/your-feature`).
+2. Create a new branch (git checkout -b feature/your-feature).
+3. Commit your changes (git commit -m 'Add some feature').
+4. Push to the branch (git push origin feature/your-feature).
 5. Open a Pull Request.
 
 ## Author
