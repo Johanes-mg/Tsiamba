@@ -57,32 +57,30 @@ Tsiamba allows you to store, organize, and retrieve your passwords securely. It 
     - src/
       - main/
         - java/
-          - com/
-            - tsiambajojoh/
-              - mg/
-                - MainActivity.kt
-                - data/
-                  - AuthentificationBiometrique.kt
-                  - Chiffrement.kt
-                  - Langue.kt
-                  - MotDePasse.kt
-                  - MotDePasseRepository.kt
-                  - Preferences.kt
-                  - Site.kt
-                  - Textes.kt
-                - ui/
-                  - screens/
-                    - DialogueConfirm.kt
-                    - EcranAccueil.kt
-                    - EcranAjout.kt
-                    - EcranDetail.kt
-                    - EcranParametres.kt
-                    - EcranVerrou.kt
-                    - IconeDrawableFallback.kt
-                  - theme/
-                    - Color.kt
-                    - Theme.kt
-                    - Type.kt
+          - com/tsiambajojoh/mg/
+            - MainActivity.kt
+            - data/
+              - AuthentificationBiometrique.kt
+              - Chiffrement.kt
+              - Langue.kt
+              - MotDePasse.kt
+              - MotDePasseRepository.kt
+              - Preferences.kt
+              - Site.kt
+              - Textes.kt
+            - ui/
+              - screens/
+                - DialogueConfirm.kt
+                - EcranAccueil.kt
+                - EcranAjout.kt
+                - EcranDetail.kt
+                - EcranParametres.kt
+                - EcranVerrou.kt
+                - IconeDrawableFallback.kt
+              - theme/
+                - Color.kt
+                - Theme.kt
+                - Type.kt
         - res/
           - drawable/
           - mipmap-*/
